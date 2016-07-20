@@ -11,10 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+Route::get('/', 'HomeController@show');
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'HomeController@show');
+
+Route::get('admin/hotels/create', 'Admin\AdminController@create');
+Route::get('/comment/{id}', 'HomeController@show_comments');
+
+
+Route::post('admin/hotels/create_hotel', 'Admin\AdminController@create_hotel');
