@@ -42,4 +42,16 @@ class HomeController extends Controller
         
         return view('view_comments')->with('comments', $comment)->with('hotel', $hotel);
     }
+    public function post_comment($id){
+        $hotel = Hotel::find($id);
+       
+        return view('create_comment')->with('hotel', $hotel);
+    }
+    
+    public function post_hotel_comments(Request $request){
+        $hotelid = $request->input('hotelid');
+        $comment = $request->input('comment');
+        Comment::firstOrCreate(['hotel_id' => $hotelid, 'comments' => $comment]);
+        return redirect('/');
+    }
 }

@@ -30,7 +30,7 @@
                         </td>
 
                         <td>
-                            <!-- TODO: Delete Button -->
+                           <div><a href='{{ url("/postcomment/$hotel->id") }}'>&larr; post comment</a></div>
                         </td>
                     </tr>
                     @endforeach

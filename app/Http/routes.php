@@ -22,6 +22,8 @@ Route::get('/home', 'HomeController@show');
 
 Route::get('admin/hotels/create', 'Admin\AdminController@create');
 Route::get('/comment/{id}', 'HomeController@show_comments');
+Route::get('/postcomment/{id}', 'HomeController@post_comment');
+Route::post('/post_hotel_comments', 'HomeController@post_hotel_comments');
 
 
 Route::post('admin/hotels/create_hotel', 'Admin\AdminController@create_hotel');
